@@ -49,12 +49,7 @@ function App() {
 
           return (
             <article className={position} key={id}>
-              <img
-                src={image}
-                width='100px'
-                alt={name}
-                className='person-img'
-              />
+              <img src={image} alt={name} className='person-img' />
               <h4>{name}</h4>
               <p className='title'>{title}</p>
               <p className='text'>{quote}</p>
