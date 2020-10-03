@@ -6,7 +6,7 @@ function App() {
   const [people, setPeople] = useState(data);
   const [index, setIndex] = React.useState(0);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const lastIndex = people.length - 1;
     if (index < 0) {
       setIndex(lastIndex);
@@ -15,6 +15,15 @@ function App() {
       setIndex(0);
     }
   }, [index, people]);
+
+  useEffect(() => {
+    let slider = setInterval(() => {
+      setIndex(index + 1);
+    }, 5000);
+    return () => {
+      clearInterval(slider);
+    };
+  }, [index]);
 
   return (
     <section className='section'>
